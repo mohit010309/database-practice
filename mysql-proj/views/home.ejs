@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        button {
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to home page</h1>
+    <%if(newsletters.length!=0){%>
+        <h2>Added Newsletters :</h2>
+        <ul>
+            <%newsletters.forEach(function(data){%>
+                <li><%=data.name%></li>
+            <%})%>
+        </ul>
+    <%}%>
+    <form action="/" method="post">
+        <input type="text" name="newsletterName" placeholder="Enter name of newsletter..."/>
+        <br/>
+        <button type="submit">Add newsletter</button>
+    </form>
+</body>
+</html>
